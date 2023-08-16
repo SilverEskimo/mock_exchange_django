@@ -1,0 +1,11 @@
+django
+psycopg2
+djangorestframework
+django-filter
+djangorestframework-simplejwt
+django-countries
+django-cors-headers
+boto3
+google-auth
+requests
+gunicorn
