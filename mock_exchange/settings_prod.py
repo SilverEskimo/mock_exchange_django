@@ -81,7 +81,7 @@ WSGI_APPLICATION = "mock_exchange.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mock_exchange',
+        'NAME': 'mockexchange',
         'USER': 'postgres',
         'PASSWORD': 'Slava1990!',
         'HOST': 'mockexchange.c5oqialja3cx.us-east-2.rds.amazonaws.com',
