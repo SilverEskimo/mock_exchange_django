@@ -145,7 +145,7 @@ STATIC_URL = "static/"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "ec2-52-14-226-72.us-east-2.compute.amazonaws.com"
+    "http://ec2-52-14-226-72.us-east-2.compute.amazonaws.com"
 ]
 
 
