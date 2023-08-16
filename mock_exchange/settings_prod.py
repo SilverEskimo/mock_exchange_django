@@ -27,7 +27,9 @@ SECRET_KEY = "django-insecure-*k5b(bq2$t#c2x)s0o1r0$m!_szevwp0qd)c-f-0fxm5205m&a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "http://ec2-52-14-226-72.us-east-2.compute.amazonaws.com"
+]
 
 
 # Application definition
@@ -144,8 +146,7 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://ec2-52-14-226-72.us-east-2.compute.amazonaws.com"
+    "http://localhost:3000"
 ]
 
 
