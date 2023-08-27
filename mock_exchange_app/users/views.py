@@ -95,12 +95,15 @@ def update_profile_img(request):
     new_object_name = request.data['objectName']
     request.user.profile.img_url = f'https://{BUCKET_NAME}.s3.amazonaws.com/{new_object_name}'
     request.user.profile.save()
-
+    print("key_ID:", AWS_ACCESS_KEY_ID)
+    print("key_secret:", AWS_SECRET_ACCESS_KEY)
     old_object_name = old_url.split("/")[-1]
-    s3.delete_object(
-        Bucket=BUCKET_NAME,
-        Key=old_object_name
-    )
+    print("Old URL:", old_object_name)
+    if old_url:
+        s3.delete_object(
+            Bucket=BUCKET_NAME,
+            Key=old_object_name
+        )
 
     response = UserProfileSerializer(request.user)
     return Response(data=response.data)

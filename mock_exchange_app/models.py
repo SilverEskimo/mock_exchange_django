@@ -13,12 +13,17 @@ class Asset(models.Model):
 
 class Wallet(models.Model):
     user = models.ForeignKey(User, on_delete=models.RESTRICT)
-    wallet_address = models.CharField()
-    asset_id = models.CharField(choices=[('BTC', 'Bitcoin'), ('ETH', 'Ethereum')])
+    wallet_address = models.CharField(blank=True)
+    asset_id = models.CharField(choices=[
+        ('BTC', 'Bitcoin'),
+        ('ETH', 'Ethereum'),
+        ('ETH_TEST3', 'Ethereum Goerli'),
+        ('BTC_TEST', 'Bitcoin Test')])
     balance = models.FloatField(blank=True, validators=[validators.MinValueValidator(0)])
     vault_account_id = models.IntegerField(blank=True, validators=[validators.MinValueValidator(0)])
     vault_account_name = models.CharField(blank=True)
     workspace_id = models.CharField(blank=True)
+    user_name = models.CharField(default="My Wallet")
 
     class Meta:
         db_table = "wallets"

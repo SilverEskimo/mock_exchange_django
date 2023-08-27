@@ -27,7 +27,10 @@ SECRET_KEY = "django-insecure-*k5b(bq2$t#c2x)s0o1r0$m!_szevwp0qd)c-f-0fxm5205m&a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "ec2-52-14-226-72.us-east-2.compute.amazonaws.com",
+    "localhost"
+]
 
 
 # Application definition
@@ -74,17 +77,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "mock_exchange.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mock_exchange',
+        'NAME': 'mockexchange',
         'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'Slava1990!',
+        'HOST': 'mockexchange.c5oqialja3cx.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -145,6 +147,7 @@ STATIC_URL = "static/"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://localhost:3001"
 ]
 
 

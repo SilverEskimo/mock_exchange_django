@@ -9,8 +9,6 @@ from mock_exchange_app.wallets.views import WalletsViewSet
 
 router = DefaultRouter()
 router.register('', WalletsViewSet)
-
-
 urlpatterns = [
 ]
 

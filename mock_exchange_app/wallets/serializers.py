@@ -7,5 +7,9 @@ class WalletSerializer(ModelSerializer):
 
     class Meta:
         model = Wallet
-        fields = ['asset_id', 'balance', 'wallet_address']
+        fields = '__all__'
         depth = 1
+
+    def save(self, **kwargs):
+        self.validated_data.update(kwargs)
+        super().save(**kwargs)
